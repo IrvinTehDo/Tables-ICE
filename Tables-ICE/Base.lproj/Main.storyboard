@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3x7-xa-j74">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5N-vF-1vg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,11 +33,61 @@
                             <outlet property="delegate" destination="Jgn-T9-6Lp" id="W9B-Ry-Xea"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3Vp-Ws-ksa"/>
+                    <navigationItem key="navigationItem" id="3Vp-Ws-ksa">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Nhf-ey-UA8">
+                            <connections>
+                                <action selector="cancelTapped:" destination="Jgn-T9-6Lp" id="K40-oG-41w"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLh-1R-ujq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1418" y="117"/>
+        </scene>
+        <!--Color Master-->
+        <scene sceneID="NL7-vr-wSl">
+            <objects>
+                <viewController title="Color Master" id="q5N-vF-1vg" customClass="ViewController" customModule="Tables_ICE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rPI-Ig-Siu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Master!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIy-8m-iZR">
+                                <rect key="frame" x="72" y="49" width="230" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSh-5R-4cZ">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="u7h-4A-Uvo"/>
+                                    <barButtonItem title="Choose Color" id="ULI-xW-EUG">
+                                        <connections>
+                                            <segue destination="3x7-xa-j74" kind="popoverPresentation" identifier="showColorSegue" popoverAnchorBarButtonItem="ULI-xW-EUG" id="Dsa-py-ogt">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qSh-5R-4cZ" firstAttribute="bottom" secondItem="kOc-dm-g0T" secondAttribute="bottom" id="9Uw-Nf-lCh"/>
+                            <constraint firstItem="kOc-dm-g0T" firstAttribute="trailing" secondItem="DIy-8m-iZR" secondAttribute="trailing" constant="73" id="DoI-m2-jF9"/>
+                            <constraint firstItem="qSh-5R-4cZ" firstAttribute="trailing" secondItem="kOc-dm-g0T" secondAttribute="trailing" id="Heg-wf-OyN"/>
+                            <constraint firstItem="DIy-8m-iZR" firstAttribute="leading" secondItem="kOc-dm-g0T" secondAttribute="leading" constant="72" id="Sc8-uE-zCH"/>
+                            <constraint firstItem="qSh-5R-4cZ" firstAttribute="leading" secondItem="kOc-dm-g0T" secondAttribute="leading" id="mhl-qQ-req"/>
+                            <constraint firstItem="DIy-8m-iZR" firstAttribute="top" secondItem="kOc-dm-g0T" secondAttribute="top" constant="29" id="nGx-Kr-eeN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kOc-dm-g0T"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oem-gD-dlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SNc-cU-CTs">

@@ -19,6 +19,15 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "showColorSegue"{
+            let colorsVC = segue.destination.childViewControllers[0] as! ColorsTableVC
+            //colorsVC.colors = ["cyan","magenta","yellow"]
+            
+            colorsVC.title = "Choose a color"
+        }
+    }
 
 
 }
